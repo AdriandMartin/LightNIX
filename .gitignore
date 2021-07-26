@@ -1,0 +1,7 @@
+.gitignore
+busybox*
+isoimage
+kernel*
+linux*
+*.iso
+syslinux*

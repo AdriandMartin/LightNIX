@@ -1,0 +1,5 @@
+busybox*
+kernel*
+linux*
+*.iso
+rootfs*

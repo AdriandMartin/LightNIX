@@ -50,6 +50,8 @@ echo '/usr/bin/busybox mount -t proc none /proc' >> init
 echo '/usr/bin/busybox mount -t sysfs none /sys' >> init
 ### Create symbolic links to the busybox's commands into "/usr/bin", which will be accesible via "/bin" and "/sbin"
 echo '/usr/bin/busybox --install -s /usr/bin' >> init
+### Prevent all messages, except emergency (panic) messages, from appearing on the console
+echo '/usr/bin/busybox dmesg -n 1' >> init
 ### Open a shell
 echo '/usr/bin/busybox sh' >> init
 chmod +x init

@@ -52,8 +52,8 @@ echo '/usr/bin/busybox mount -t sysfs none /sys' >> init
 echo '/usr/bin/busybox --install -s /usr/bin' >> init
 ### Prevent all messages, except emergency (panic) messages, from appearing on the console
 echo '/usr/bin/busybox dmesg -n 1' >> init
-### Open a shell
-echo '/usr/bin/busybox sh' >> init
+### Open a shell (with "/usr/bin/busybox sh") executing "exec" instead of "fork" and becoming init (with "/usr/bin/busybox setsid")
+echo '/usr/bin/busybox setsid -c /usr/bin/busybox sh' >> init
 chmod +x init
 ## Compress the directory's content as a file named "rootfs.gz"
 find . | cpio -R root:root -H newc -o | gzip > ../rootfs.gz

@@ -1,7 +1,8 @@
 #!/bin/sh
 ################################################################################
 # This script creates a minimal Linux distribution as an ISO file for i386 
-# architecture. It just consists of busybox and the Linux kernel
+# architecture. It just consists of busybox and the Linux kernel, but SysLinux 
+# is included implicitly as the bootloader
 # Author: Adrián Martín
 # Thanks: https://github.com/ivandavidov/minimal-linux-script
 ################################################################################

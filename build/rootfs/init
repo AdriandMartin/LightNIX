@@ -10,9 +10,12 @@
 
 # Prevent showing all messages into the console, except emergency (panic) messages, from appearing on the console
 /usr/bin/busybox dmesg -n 1
-# Clear the console and show a basic message before login prompt
-/usr/bin/busybox clear
-/usr/bin/busybox echo "LightNIX ARCH GNU/Linux VERSION"
 
-# Open a shell executing "exec" instead of "fork" and becoming init
-/usr/bin/busybox setsid -c /usr/bin/busybox sh
+# Loop forever executing login each time a session closes
+while /usr/bin/busybox true; do
+    # Clear the console and show a basic message before login prompt
+    /usr/bin/busybox clear
+    /usr/bin/busybox echo "LightNIX ARCH GNU/Linux VERSION"
+    # Execute log in program, showing the login prompt
+    /usr/bin/busybox setsid -c /usr/bin/busybox login
+done

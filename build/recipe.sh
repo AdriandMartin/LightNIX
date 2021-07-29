@@ -86,7 +86,7 @@ cd ${OLDPWD}
 #-------------------------------------------------------------------------------
 # User programs
 ## Check if the busybox tarball exists, and if it doesn't, download it
-if [ ! -f ${BUSYBOX_SOURCES}.tar.xz ]; then
+if [ ! -f ${BUSYBOX_SOURCES}.tar.bz2 ]; then
     wget -O ${BUSYBOX_SOURCES}.tar.bz2 https://busybox.net/downloads/${BUSYBOX_SOURCES}.tar.bz2
 fi
 ## Check if busybox's source directory exists, and if it doesn't, extract it from the tarball

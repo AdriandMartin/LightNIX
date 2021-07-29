@@ -1,2 +1,2 @@
 #!/bin/sh
-rm -rf busybox* isoimage kernel* linux* *.iso syslinux*
+rm -rf busybox* linux* syslinux* isoimage/ _rootfs/

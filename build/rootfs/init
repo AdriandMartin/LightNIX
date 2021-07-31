@@ -8,12 +8,12 @@
 # Create symbolic links to the busybox's commands into "/usr/bin"
 /usr/bin/busybox --install -s /usr/bin
 
-# Prevent showing all messages into the console, except emergency (panic) messages, from appearing on the console
+# Prevent showing all messages into the console, except emergency (panic) messages
 /usr/bin/busybox dmesg -n 1
 
 # Loop forever executing login each time a session closes
 while /usr/bin/busybox true; do
-    # Clear the console and show a basic message before login prompt
+    # Clear the console and show a basic message before the login prompt
     /usr/bin/busybox clear
     /usr/bin/busybox echo "LightNIX ARCH GNU/Linux VERSION"
     # Execute log in program, showing the login prompt

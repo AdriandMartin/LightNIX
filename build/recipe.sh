@@ -1,12 +1,20 @@
 #!/bin/sh
+################################################################################
+# This script builds the distribution, downloading, extracting, compiling and 
+# compressing the necessary packages to create a bootable ISO file
+# Author: Adrián Martín
+################################################################################
 
 # Constants definition
-## Source common definitions
+## Import common definitions
 . ../common.sh
 ## Paths
 BUILD_PATH=$(pwd)
+### Path to the directory where the resulting ISO file will be stored
 RELEASES_PATH=${BUILD_PATH}/../releases
+### Path to the template of the root directory of the distribution
 ROOTFS_DIR=rootfs
+### Path to the directory where the files required for building the ISO will be placed
 ISOIMAGE_PATH=${BUILD_PATH}/isoimage
 ## Software
 KERNEL_VERSION=5.13.5
@@ -107,9 +115,9 @@ if [ ! -f ${BUSYBOX_SOURCES}/busybox ]; then
     ### Return
     cd ${OLDPWD}
 fi
-## Copy the resulting binary in the root directory
+## Copy the resulting binary into the root directory
 cp ${BUSYBOX_SOURCES}/busybox _${ROOTFS_DIR}/usr/bin
-## Copy the configuration files in the root directory
+## Copy the configuration files into the root directory
 # ;
 
 #-------------------------------------------------------------------------------
